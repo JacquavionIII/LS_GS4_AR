@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public class Character : ARInteractableObject
+{
+    [SerializeField] private Renderer _renderer;
+    private Animator animator;
+
+    private void OnEnable()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    protected override void SetState(State state)
+    {
+        base.SetState(state);
+        switch (state)
+        {
+            case State.Idle:
+                animator.SetTrigger("Idle");
+                if (_renderer == null) return;
+                _renderer.materials[0].EnableKeyword("_EMISSION");
+                _renderer.materials[0].SetColor("_EmissionColor", new Color( 0.5f, 0.5f, 0.5f, 0.1f));
+                break;
+            case State.Active:
+                animator.SetTrigger("StartInteraction");
+                _renderer.materials[0].EnableKeyword("_EMISSION");
+                _renderer.materials[0].SetColor("_EmissionColor", new Color( 0, 0, 0, 0));
+
+                break;
+        }
+    }
+}

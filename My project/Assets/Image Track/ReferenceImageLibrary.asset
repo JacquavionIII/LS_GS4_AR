@@ -23,7 +23,17 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 14228003787607945718
       m_GuidHigh: 15030579359403707512
-    m_Size: {x: 0.1, y: 0.056312166}
+    m_Size: {x: 0.17758152, y: 0.1}
     m_SpecifySize: 1
     m_Name: "Yamato \u25C6 Ace"
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4625795901805970314
+      m_GuidHigh: 11815152207623198373
+    m_SerializedTextureGuid:
+      m_GuidLow: 14588474839162332447
+      m_GuidHigh: 4110191271836461721
+    m_Size: {x: 0.1, y: 0.054492187}
+    m_SpecifySize: 1
+    m_Name: Battle Of Camlann
     m_Texture: {fileID: 0}
