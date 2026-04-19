@@ -62,15 +62,23 @@ public class MultipleImagesTrackier : MonoBehaviour
     private void UpdateTrackedImages(ARTrackedImage trackedImage)
     {
         if(trackedImage == null) return;
+
+        // Guard against null reference image name (common on removal)
+        string imageName = trackedImage.referenceImage.name;
+        if (string.IsNullOrEmpty(imageName)) return;
+
+        // Guard against unregistered image names
+        if (!_arObjects.TryGetValue(imageName, out GameObject arObject)) return;
+
         if(trackedImage.trackingState is TrackingState.Limited or TrackingState.None)
         {
-            _arObjects[trackedImage.referenceImage.name].gameObject.SetActive(false);
+            arObject.SetActive(false);
             return;
         }
 
-        _arObjects[trackedImage.referenceImage.name].gameObject.SetActive(true);
-        _arObjects[trackedImage.referenceImage.name].transform.position = trackedImage.transform.position;
-        _arObjects[trackedImage.referenceImage.name].transform.rotation = trackedImage.transform.rotation;
+        arObject.SetActive(true);
+        arObject.transform.position = trackedImage.transform.position;
+        arObject.transform.rotation = trackedImage.transform.rotation;
     } 
 
 }

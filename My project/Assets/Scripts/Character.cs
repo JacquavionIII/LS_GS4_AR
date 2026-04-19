@@ -16,7 +16,7 @@ public class Character : ARInteractableObject
         switch (state)
         {
             case State.Idle:
-                animator.SetTrigger("Idle");
+                animator.SetTrigger("idle");
                 if (_renderer == null) return;
                 _renderer.materials[0].EnableKeyword("_EMISSION");
                 _renderer.materials[0].SetColor("_EmissionColor", new Color( 0.5f, 0.5f, 0.5f, 0.1f));

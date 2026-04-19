@@ -15,7 +15,7 @@ public class Box2 : ARInteractableObject
         switch (state)
         {
             case State.Idle:
-            animator.SetTrigger("Idle");
+            animator.SetTrigger("idle");
             break;
             case State.Active:
             animator.SetTrigger("StartInteraction");
