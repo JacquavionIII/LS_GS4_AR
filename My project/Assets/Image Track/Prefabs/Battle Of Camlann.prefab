@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 6979784334506802597}
   m_Layer: 0
   m_Name: Battle Of Camlann
-  m_TagString: Untagged
+  m_TagString: Camlann
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
